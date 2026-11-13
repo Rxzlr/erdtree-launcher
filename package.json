@@ -1,0 +1,62 @@
+{
+  "name": "erdtree-launcher",
+  "productName": "Erdtree Launcher",
+  "version": "2.7.1",
+  "description": "لانشر إلدن رينغ العربي: تشغيل مباشر، مودات، شخصيات، حفظات، وتعديلات أوفلاين",
+  "main": "main.js",
+  "author": "Abdul",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "test": "npm run test:e2e",
+    "test:e2e": "electron test/run-e2e.js",
+    "test:updater": "node scripts/test-updater-github.js",
+    "test:controller": "node scripts/test-controller.js",
+    "test:builds": "node scripts/test-builds.js",
+    "test:social": "node scripts/test-social.js",
+    "update:feed": "node scripts/make-update.js",
+    "package": "node scripts/build.js dir",
+    "package:win": "node scripts/build.js win",
+    "test:accounts": "node scripts/test-accounts.js"
+  },
+  "devDependencies": {
+    "electron": "^45.3.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.erdtree.launcher",
+    "productName": "Erdtree Launcher",
+    "directories": {
+      "output": "release"
+    },
+    "electronDist": "node_modules/electron/dist",
+    "files": [
+      "main.js",
+      "preload.js",
+      "overlay-preload.js",
+      "package.json",
+      "src/**/*",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "portable": {
+      "artifactName": "Erdtree-Launcher-${version}-portable.exe"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Erdtree Launcher",
+      "deleteAppDataOnUninstall": false,
+      "artifactName": "Erdtree-Launcher-Setup-${version}.exe"
+    },
+    "asar": false
+  }
+}

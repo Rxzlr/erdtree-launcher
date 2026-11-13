@@ -1,0 +1,286 @@
+/* ---------- co-op password (home launch panel) ---------- */
+.coop-pass {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(201, 168, 106, 0.22);
+  background: linear-gradient(180deg, rgba(201, 168, 106, 0.07), rgba(201, 168, 106, 0.02));
+}
+
+.coop-pass-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--gold-2);
+  margin-bottom: 8px;
+}
+
+.coop-pass-head .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.coop-pass-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.coop-pass-row .input {
+  flex: 1;
+  min-width: 0;
+}
+
+.coop-pass-row .btn {
+  flex: none;
+  white-space: nowrap;
+}
+
+/* ---------- first-run setup wizard ---------- */
+.modal.wiz {
+  width: min(640px, 100%);
+}
+
+.wiz-head {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(201, 168, 106, 0.1);
+}
+
+.wiz-dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wiz-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-latin);
+  font-size: 12.5px;
+  color: var(--muted);
+  border: 1px solid rgba(201, 168, 106, 0.2);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.wiz-dot.active {
+  color: #1a1408;
+  background: linear-gradient(180deg, var(--gold-2), var(--gold));
+  border-color: transparent;
+  box-shadow: 0 0 18px rgba(201, 168, 106, 0.35);
+}
+
+.wiz-dot.done {
+  color: var(--gold-2);
+  border-color: rgba(201, 168, 106, 0.45);
+}
+
+.wiz-dot .icon {
+  width: 14px;
+  height: 14px;
+}
+
+.wiz-body {
+  padding: 22px 22px 8px;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.wiz-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.wiz-sub {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.wiz-card {
+  border: 1px solid rgba(201, 168, 106, 0.16);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wiz-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.wiz-line .icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex: none;
+}
+
+.wiz-line.ok,
+.wiz-status.ok {
+  color: #9fd6a6;
+}
+
+.wiz-line.warn,
+.wiz-status.warn {
+  color: #e3c88a;
+}
+
+.wiz-line b.mono {
+  color: var(--gold-2);
+}
+
+.wiz-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.wiz-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wiz-field .setting-label {
+  font-size: 12.5px;
+  color: var(--text);
+}
+
+.wiz-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  padding: 9px 11px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(201, 168, 106, 0.12);
+}
+
+.wiz-status .icon {
+  width: 15px;
+  height: 15px;
+  flex: none;
+}
+
+.wiz-prog {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--gold-2);
+  padding: 9px 11px;
+  border-radius: 8px;
+  border: 1px dashed rgba(201, 168, 106, 0.3);
+  animation: wizPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes wizPulse {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.wiz-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 11.5px;
+  line-height: 1.8;
+  color: var(--muted-2);
+}
+
+.wiz-hint .icon {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  margin-top: 2px;
+}
+
+.wiz-mode {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.wiz-mode-opt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 16px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(201, 168, 106, 0.16);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+  text-align: center;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.wiz-mode-opt .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.wiz-mode-opt b {
+  font-family: var(--font-latin);
+  font-size: 13px;
+  color: var(--text);
+  letter-spacing: 0.04em;
+}
+
+.wiz-mode-opt span {
+  font-size: 11.5px;
+}
+
+.wiz-mode-opt.active {
+  border-color: rgba(201, 168, 106, 0.55);
+  background: linear-gradient(180deg, rgba(201, 168, 106, 0.14), rgba(201, 168, 106, 0.04));
+  color: var(--gold-2);
+  box-shadow: inset 0 0 0 1px rgba(201, 168, 106, 0.2);
+}
+
+.wiz-summary .wiz-line {
+  font-size: 12.5px;
+}
+
+.wiz-foot {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 16px 22px 20px;
+  border-top: 1px solid rgba(201, 168, 106, 0.1);
+}
+
+@media (max-width: 640px) {
+  .wiz-mode {
+    grid-template-columns: 1fr;
+  }
+}

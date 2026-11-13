@@ -1,0 +1,33 @@
+name: Release
+
+# Optional automation: pushing a v* tag builds the Windows installer and
+# portable exe and attaches them to a GitHub Release. Pushing the tag is the
+# publisher's explicit approval step — nothing publishes on its own.
+# The local alternative is: node scripts/prepare-release.js … then
+# gh release create (see README).
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx electron-builder --win --x64 --publish never
+      - name: Attach artifacts to the release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            release/Erdtree-Launcher-Setup-*.exe
+            release/Erdtree-Launcher-*-portable.exe
+          generate_release_notes: true

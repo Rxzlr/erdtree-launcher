@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: erdmod: https: http:; script-src 'self'"
+    />
+    <title>Erdtree Launcher — لانشر إلدن رينغ</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="workshop.css" />
+    <link rel="stylesheet" href="setup.css" />
+    <link rel="stylesheet" href="social.css" />
+    <link rel="stylesheet" href="account.css" />
+    <link rel="stylesheet" href="workshop2.css" />
+    <link rel="stylesheet" href="features.css" />
+    <link rel="stylesheet" href="theme.css" />
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true">
+      <div class="ambient-ring ring-a"></div>
+      <div class="ambient-ring ring-b"></div>
+      <div class="ambient-glow"></div>
+      <div class="ambient-grain"></div>
+    </div>
+
+    <header class="titlebar">
+      <div class="titlebar-title" dir="ltr">
+        <span class="mark"></span>
+        <span class="latin">ERDTREE</span>
+        <span class="thin">LAUNCHER</span>
+      </div>
+      <div class="titlebar-status" id="titlebarStatus">
+        <span class="dot" id="tbDot"></span>
+        <span id="tbText">جاري التحميل…</span>
+      </div>
+      <button class="lang-btn" id="langToggle" type="button" title="Language / اللغة" aria-label="Language / اللغة">EN</button>
+      <div class="win-controls" id="winControls">
+        <button class="win-btn" data-win="minimize" aria-label="تصغير" title="تصغير">
+          <svg viewBox="0 0 12 12"><path d="M2 6h8" stroke="currentColor" stroke-width="1.2" /></svg>
+        </button>
+        <button class="win-btn" data-win="maximize" aria-label="تكبير" title="تكبير">
+          <svg viewBox="0 0 12 12"><rect x="2.4" y="2.4" width="7.2" height="7.2" rx="1" stroke="currentColor" stroke-width="1.1" fill="none" /></svg>
+        </button>
+        <button class="win-btn close" data-win="close" aria-label="إغلاق" title="إغلاق">
+          <svg viewBox="0 0 12 12"><path d="M3 3l6 6M9 3 3 9" stroke="currentColor" stroke-width="1.2" /></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="auth-root" id="authRoot" hidden></div>
+
+    <div class="shell" id="appShell" hidden>
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-emblem" aria-hidden="true">
+            <svg viewBox="0 0 120 120" fill="none">
+              <circle cx="60" cy="60" r="46" stroke="url(#g1)" stroke-width="1.2" opacity=".9" />
+              <circle cx="60" cy="60" r="38" stroke="url(#g1)" stroke-width=".7" stroke-dasharray="3 6" opacity=".7" />
+              <circle cx="60" cy="60" r="26" stroke="url(#g2)" stroke-width="1.4" />
+              <circle cx="60" cy="60" r="18" stroke="url(#g2)" stroke-width=".7" opacity=".65" />
+              <path d="M60 8v14M60 98v14M8 60h14M98 60h14" stroke="url(#g1)" stroke-width="1" opacity=".8" />
+              <path d="M60 42v36M42 60h36" stroke="url(#g2)" stroke-width=".8" opacity=".5" />
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="120" y2="120">
+                  <stop stop-color="#e8d7a8" />
+                  <stop offset="1" stop-color="#8f7440" />
+                </linearGradient>
+                <linearGradient id="g2" x1="120" y1="0" x2="0" y2="120">
+                  <stop stop-color="#f3e5bd" />
+                  <stop offset=".5" stop-color="#c9a86a" />
+                  <stop offset="1" stop-color="#6f5a32" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <div class="brand-title latin">ERDTREE</div>
+            <div class="brand-sub">لانشر إلدن رينغ</div>
+          </div>
+        </div>
+
+        <nav class="nav" id="nav">
+          <button class="nav-item" data-nav="home">
+            <span class="nav-icon" data-icon="home"></span>
+            <span>الرئيسية</span>
+          </button>
+          <button class="nav-item" data-nav="friends">
+            <span class="nav-icon" data-icon="friends"></span>
+            <span>Friends</span>
+            <span class="nav-badge" id="friendsBadge">0</span>
+          </button>
+          <button class="nav-item" data-nav="builds">
+            <span class="nav-icon" data-icon="builds"></span>
+            <span>Builds</span>
+          </button>
+          <button class="nav-item" data-nav="mods">
+            <span class="nav-icon" data-icon="layers"></span>
+            <span>Workshop</span>
+            <span class="nav-badge" id="modsBadge">0</span>
+          </button>
+          <button class="nav-item" data-nav="mysaves">
+            <span class="nav-icon" data-icon="save"></span>
+            <span>MY SAVES</span>
+          </button>
+          <button class="nav-item" data-nav="unlocks">
+            <span class="nav-icon" data-icon="key"></span>
+            <span>UNLOCK ALL</span>
+          </button>
+          <button class="nav-item" data-nav="settings">
+            <span class="nav-icon" data-icon="gear"></span>
+            <span>الاعدادات</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-foot">
+          <div class="conn-pill" id="connPill">
+            <span class="dot" id="connDot"></span>
+            <span id="connText">اللعبة مو شغالة</span>
+          </div>
+          <div class="side-note">التعديلات للعب الأوفلاين بس — خلّك Solo.</div>
+          <div class="version" id="versionText"></div>
+        </div>
+      </aside>
+
+      <main class="main" id="main">
+        <div class="topbar" id="topbar">
+          <div class="topbar-search">
+            <span class="topbar-search-icon" data-icon="search"></span>
+            <input id="globalSearch" type="text" autocomplete="off" placeholder="Search mods, builds, friends…" />
+            <span class="topbar-search-hint">Enter</span>
+          </div>
+          <button class="account-chip" id="accountChip" type="button"></button>
+        </div>
+        <div class="view-mount" id="viewMount"></div>
+      </main>
+    </div>
+
+    <div class="toast-stack" id="toasts" aria-live="polite"></div>
+    <div class="modal-root" id="modalRoot"></div>
+
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

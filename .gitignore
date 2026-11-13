@@ -1,0 +1,28 @@
+node_modules/
+release*/
+dist/
+dist-build*/
+test/shots/
+backup/
+backups/
+*.log
+npm-debug.log*
+
+# one-off scratch / generator artifacts (kept on disk, out of the repo)
+tga/
+tga-release.json
+tga-release.zip
+tga-tree.json
+tmp-nexus-catalog.json
+tmp-nexus.html
+.mqtt-test.js
+vibe_images/
+
+# test scratch: screenshots, captured pages, temp profiles (test code stays)
+test/real-shots/
+test/tmp-account-ui/
+test/tmp-userdata/
+test/*.png
+test/*.html
+test/*.txt
+test/*.lnk
